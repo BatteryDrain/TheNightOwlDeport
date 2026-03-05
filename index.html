@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Little Relief Co. — Parent Bundles</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #FFF8F0;
+    --soft-blue: #E8F4FD;
+    --navy: #1A3A5C;
+    --coral: #F4714A;
+    --mint: #4CBFA6;
+    --gold: #F5A623;
+    --lilac: #B8A9E0;
+    --rose: #F4849A;
+    --sky: #5BB8E8;
+    --green: #6DBF7A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  header {
+    background: var(--navy);
+    padding: 48px 40px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 80%, rgba(75,191,166,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(244,113,74,0.2) 0%, transparent 60%);
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+    position: relative;
+  }
+  .logo span { color: var(--mint); }
+  .tagline {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 6px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 520px;
+    margin-inline: auto;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* FLOATING SHAPES */
+  .shapes {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .shapes span {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.07;
+    animation: float 8s ease-in-out infinite;
+  }
+  .shapes span:nth-child(1) { width:120px;height:120px;background:var(--mint);top:10%;left:5%;animation-delay:0s; }
+  .shapes span:nth-child(2) { width:80px;height:80px;background:var(--coral);top:60%;left:12%;animation-delay:2s; }
+  .shapes span:nth-child(3) { width:160px;height:160px;background:var(--gold);top:5%;right:8%;animation-delay:1s; }
+  .shapes span:nth-child(4) { width:60px;height:60px;background:var(--lilac);bottom:10%;right:15%;animation-delay:3s; }
+  @keyframes float {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+  }
+
+  /* INTRO BAR */
+  .intro-bar {
+    background: white;
+    border-bottom: 2px solid #EEE;
+    padding: 18px 40px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+  }
+  .intro-bar strong { color: var(--coral); }
+
+  /* GRID */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .section-sub {
+    text-align: center;
+    color: #777;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+  }
+
+  /* CARD */
+  .card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(26,58,92,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(26,58,92,0.14);
+  }
+
+  .card-header {
+    padding: 28px 24px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+  }
+  .card-emoji {
+    font-size: 2.6rem;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  }
+  .card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+  }
+  .card-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    margin-top: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .card-body { padding: 20px 24px 24px; }
+
+  .bundle-reason {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .products-label {
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+
+  .product-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .product-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--navy);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .product-list li .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .product-list li .why {
+    font-weight: 400;
+    color: #888;
+    font-size: 0.8rem;
+  }
+
+  .card-footer {
+    padding: 0 24px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .price-badge {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: #F5F5F5;
+    padding: 5px 12px;
+    border-radius: 30px;
+  }
+  .price-badge span { font-size: 0.75rem; color: #999; font-family: 'Nunito', sans-serif; font-weight: 600; }
+
+  .add-btn {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .add-btn:hover { background: var(--coral); transform: scale(1.04); }
+
+  /* NOTES SECTION */
+  .notes {
+    margin-top: 60px;
+    background: white;
+    border-radius: 20px;
+    padding: 32px 36px;
+    box-shadow: 0 4px 20px rgba(26,58,92,0.06);
+  }
+  .notes h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .note-item {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.5;
+    border-left: 4px solid var(--mint);
+  }
+  .note-item strong { color: var(--navy); display: block; margin-bottom: 3px; font-size: 0.92rem; }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: #aaa;
+    font-size: 0.82rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shapes">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="logo">Little Relief <span>Co.</span></div>
+  <div class="tagline">Calgary's Children's Wellness Shop</div>
+  <p class="hero-sub">Every bundle is curated by condition — so parents spend less time searching and more time caring.</p>
+</header>
+
+<div class="intro-bar">
+  <strong>10 parent-approved bundles</strong> · Each includes the right products for the right age · All products Health Canada approved
+</div>
+
+<main>
+  <h1 class="section-title">Shop by Condition</h1>
+  <p class="section-sub">Tap a bundle to see what's inside and why it works</p>
+
+  <div class="grid" id="bundleGrid"></div>
+
+  <div class="notes">
+    <h2>📋 Bundle Strategy Notes for Your Business</h2>
+    <div class="notes-grid">
+      <div class="note-item"><strong>Seasonal Stocking</strong>Bundle demand shifts with the calendar — cold/flu bundles peak Oct–Mar; allergy bundles peak Apr–Oct; sun care peaks May–Aug.</div>
+      <div class="note-item"><strong>Age Segmentation</strong>Consider offering each bundle in 2 variants: "Infant (0–12 months)" and "Toddler & Up (1–6 years)" since dosage forms differ.</div>
+      <div class="note-item"><strong>Subscription Potential</strong>High-repeat bundles (Newborn Essentials, Fever & Pain) are ideal for a monthly subscription box model.</div>
+      <div class="note-item"><strong>Bundle Naming</strong>Use plain, search-friendly names ("Flu Bundle", "Diarrhea Bundle") in URLs and meta, but warm names ("The Sniffly Night Kit") for the customer-facing display.</div>
+      <div class="note-item"><strong>Regulatory Note</strong>All bundled products must individually carry a DIN. Do not split or repackage — sell original sealed units only.</div>
+      <div class="note-item"><strong>High-Margin Additions</strong>Adding a Vitamin D or probiotic drop to any bundle adds minimal cost but increases perceived value significantly.</div>
+    </div>
+  </div>
+</main>
+
+<footer>Little Relief Co. · Calgary, Alberta · Research Prototype · March 2026</footer>
+
+<script>
+const bundles = [
+  {
+    emoji: "🤧",
+    title: "The Cold Bundle",
+    subtitle: "Sneezes & Runny Noses",
+    color: ["#5BB8E8", "#2E86C1"],
+    why: "The #1 reason parents visit a pharmacy. A complete kit means they can manage symptoms at home without multiple store runs.",
+    products: [
+      { name: "Saline Nasal Spray", why: "safe for all ages, immediate relief" },
+      { name: "Children's Acetaminophen (Tylenol)", why: "fever + pain from congestion" },
+      { name: "Dextromethorphan Cough Syrup (6+)", why: "suppresses dry nighttime cough" },
+      { name: "Children's Multivitamin", why: "immune support during recovery" },
+    ],
+    price: "$32–$40"
+  },
+  {
+    emoji: "🤒",
+    title: "The Flu Bundle",
+    subtitle: "Fever, Body Aches & Fatigue",
+    color: ["#F4714A", "#C0392B"],
+    why: "Flu hits harder than a cold — parents need fever management AND rehydration. This bundle covers both and saves a stressed parent from 2 separate trips.",
+    products: [
+      { name: "Acetaminophen (Tylenol Children's)", why: "fever control — first line of defence" },
+      { name: "Ibuprofen (Advil Pediatric)", why: "alternating with Tylenol for stubborn fevers" },
+      { name: "Pedialyte Oral Rehydration Solution", why: "critical for fluid/electrolyte loss" },
+      { name: "Vitamin D Drops", why: "supports immune recovery" },
+    ],
+    price: "$36–$48"
+  },
+  {
+    emoji: "🤧🌿",
+    title: "The Allergy Bundle",
+    subtitle: "Sneezing, Itchy Eyes & Hives",
+    color: ["#4CBFA6", "#1A8A70"],
+    why: "Calgary has one of the highest pollen seasons in Western Canada. Parents of allergic kids buy this annually and refill every spring and fall.",
+    products: [
+      { name: "Loratadine (Claritin Kids)", why: "non-drowsy daily antihistamine" },
+      { name: "Cetirizine (Reactine Children's)", why: "fast-acting for acute reactions" },
+      { name: "Children's Allergy Eye Drops", why: "targets itchy/watery eyes specifically" },
+      { name: "Diphenhydramine (Benadryl)", why: "for nighttime relief or hives" },
+    ],
+    price: "$38–$50"
+  },
+  {
+    emoji: "🚽",
+    title: "The Diarrhea Bundle",
+    subtitle: "Stomach Bugs & Loose Stools",
+    color: ["#B8A9E0", "#7D6DC4"],
+    why: "Stomach bugs spread fast in daycare and schools. Parents need rehydration + gut support + diaper rash prevention (diarrhea causes severe rash in infants).",
+    products: [
+      { name: "Pedialyte (Oral Rehydration Solution)", why: "replaces lost fluids & electrolytes" },
+      { name: "Children's Probiotics", why: "restores gut flora after illness" },
+      { name: "Zinc Oxide Diaper Cream (Desitin)", why: "prevents rash from frequent stools" },
+      { name: "Children's Antidiarrheal (12+) / simethicone", why: "relieves cramping & discomfort" },
+    ],
+    price: "$34–$44"
+  },
+  {
+    emoji: "🤮",
+    title: "The Vomiting & Nausea Bundle",
+    subtitle: "Upset Stomach & Nausea",
+    color: ["#6DBF7A", "#3A9B4A"],
+    why: "Vomiting episodes are alarming for parents. Rehydration is the #1 priority — this bundle gives them what they need immediately, especially for midnight emergencies.",
+    products: [
+      { name: "Pedialyte (multiple formats)", why: "popsicles & liquid for reluctant drinkers" },
+      { name: "Children's Simethicone Drops", why: "relieves gas cramps alongside nausea" },
+      { name: "Children's Probiotics", why: "gut recovery post-vomiting episode" },
+      { name: "Children's Acetaminophen", why: "for fever that often accompanies illness" },
+    ],
+    price: "$30–$42"
+  },
+  {
+    emoji: "🌸",
+    title: "The Skin Relief Bundle",
+    subtitle: "Rashes, Eczema & Bites",
+    color: ["#F4849A", "#D4547A"],
+    why: "Skin issues are the 3rd most common reason parents seek a pharmacist's advice. Eczema is especially prevalent in Calgary's dry climate.",
+    products: [
+      { name: "1% Hydrocortisone Cream", why: "eczema, hives, inflammation" },
+      { name: "Calamine Lotion / After Bite Kids", why: "mosquito bites, chickenpox itching" },
+      { name: "Zinc Oxide Cream", why: "protective barrier for raw skin" },
+      { name: "Gentle Fragrance-Free Moisturizer", why: "dry skin & eczema maintenance" },
+    ],
+    price: "$28–$38"
+  },
+  {
+    emoji: "👶",
+    title: "The Newborn Essentials Bundle",
+    subtitle: "Ages 0–6 Months",
+    color: ["#F5A623", "#D4860D"],
+    why: "New parents are the most anxious and highest-spending demographic in the OTC market. A curated newborn kit positions your brand as a trusted first stop.",
+    products: [
+      { name: "Vitamin D Drops (D-Drops Baby)", why: "Health Canada recommends for all infants" },
+      { name: "Simethicone Gas Drops (Ovol)", why: "colic & gas — extremely high repeat purchase" },
+      { name: "Saline Nasal Drops (infant)", why: "only safe option for under 6 months" },
+      { name: "Zinc Oxide Diaper Cream (Penaten)", why: "daily use from day one" },
+    ],
+    price: "$30–$40"
+  },
+  {
+    emoji: "🦷",
+    title: "The Teething & Oral Pain Bundle",
+    subtitle: "4 Months – 2 Years",
+    color: ["#5BB8E8", "#1F7AB8"],
+    why: "Teething can last 2+ years and parents buy remedies repeatedly. Including benzocaine-free products keeps you compliant with Health Canada's 2016 advisory.",
+    products: [
+      { name: "Benzocaine-Free Teething Gel (Orajel Natural)", why: "numbs gum pain, Health Canada safe" },
+      { name: "Children's Acetaminophen drops", why: "for pain that disrupts sleep" },
+      { name: "Simethicone Drops", why: "teething often causes stomach upset" },
+      { name: "Baby Probiotics", why: "supports digestion during teething phase" },
+    ],
+    price: "$28–$36"
+  },
+  {
+    emoji: "☀️",
+    title: "The Summer Outdoor Bundle",
+    subtitle: "Sun, Bugs & Heat",
+    color: ["#F5A623", "#E68900"],
+    why: "Calgary summers are sunny and mosquito-heavy. Families heading to parks, lakes, and Stampede need this every season — strong June–August sales driver.",
+    products: [
+      { name: "Children's SPF 50 Sunscreen (Neutrogena Kids)", why: "mineral formula for sensitive skin" },
+      { name: "DEET-free Insect Repellent (kids formula)", why: "safe from 6 months+" },
+      { name: "After Bite Kids / Calamine", why: "immediate itch relief from bites" },
+      { name: "Oral Rehydration Solution (Pedialyte)", why: "heat & dehydration on hot days" },
+    ],
+    price: "$36–$48"
+  },
+  {
+    emoji: "💊",
+    title: "The Daily Wellness Bundle",
+    subtitle: "Vitamins & Immune Support",
+    color: ["#4CBFA6", "#247A66"],
+    why: "Year-round seller with strong repeat purchase rate. Parents who adopt a daily vitamin routine come back monthly. Great for subscription box model.",
+    products: [
+      { name: "Children's Multivitamin (Flintstones/Jamieson)", why: "fills nutritional gaps daily" },
+      { name: "Vitamin D Drops", why: "critical in Calgary's low-sun winters" },
+      { name: "Children's Probiotic", why: "gut and immune health" },
+      { name: "Iron Drops (Fer-In-Sol) — toddlers", why: "prevents common iron deficiency in toddlers" },
+    ],
+    price: "$38–$52"
+  },
+];
+
+const grid = document.getElementById('bundleGrid');
+
+bundles.forEach(b => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="card-header" style="background: linear-gradient(135deg, ${b.color[0]}, ${b.color[1]})">
+      <span class="card-emoji">${b.emoji}</span>
+      <div class="card-title">${b.title}</div>
+      <div class="card-subtitle">${b.subtitle}</div>
+    </div>
+    <div class="card-body">
+      <p class="bundle-reason">"${b.why}"</p>
+      <div class="products-label">What's in the bundle</div>
+      <ul class="product-list">
+        ${b.products.map(p => `
+          <li>
+            <span class="dot" style="background:${b.color[0]}"></span>
+            <span><strong>${p.name}</strong><br/><span class="why">${p.why}</span></span>
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+    <div class="card-footer">
+      <div class="price-badge">Est. ${b.price} <span>retail</span></div>
+      <button class="add-btn">Add to Cart →</button>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>
